@@ -419,6 +419,11 @@ public class Parser {
                     c = parseMerge();
                 }
                 break;
+             case 'n':
+             case 'N':
+                    if (readIf("NOLOCK")) {
+                    }
+                    break;
             case 'p':
             case 'P':
                 if (readIf("PREPARE")) {
@@ -479,6 +484,7 @@ public class Parser {
             case 'W':
                 if (isToken("WITH")) {
                     c = parseSelect();
+
                 }
                 break;
             case ';':
